@@ -36,6 +36,12 @@ export const getStaticProps: GetStaticProps<IndexProps> = async (_context: GetSt
     const response = await fetch('http://localhost:3000/api/discourse');
     const discourseList: string[] = await response.json();
 
+    if (!discourseList) {
+        return {
+            notFound: true,
+        }
+    }
+
     return {
         props: {
             discourseList
