@@ -32,24 +32,17 @@ interface IndexProps {
     discourseList: string[];
 }
 
-export const getStaticProps: GetStaticProps<IndexProps> = async (_context: GetStaticPropsContext) => {
-    const response = await fetch('http://localhost:3000/api/discourse');
-    const discourseList: string[] = await response.json();
+const discourseList: string[] = [
+    'คือสังคมนิยมกับคอมมิวนิสต์มันไม่เหมือนกันนะ แยกกันให้ออก',
+    'ถ้าเราล้มทุนนิยมได้ เราคงได้เห็นคนทำตามความฝันตัวเองกันมากขึ้น',
+    'เกลียดคนรวยว่ะ แค่มีเงินมากกว่าก็มีทางเลือกมากกว่าแล้ว ทุนนิยมเฮงซวย',
+    'อยากให้สหภาพแรงงานไทยแข็งแรง กูต้องการสังคมนิยมประชาธิปไตย',
+    'สมแล้วที่แม่งเป็นสังคมทุนนิยม',
+    'ทรานส์เป็นผู้หญิง',
+    'ทุกคนควรจะได้รับรัฐสวัสดิการพื้นฐาน'
+];
 
-    if (!discourseList) {
-        return {
-            notFound: true,
-        }
-    }
-
-    return {
-        props: {
-            discourseList
-        }
-    }
-}
-
-const IndexPage: NextPage<IndexProps> = ({ discourseList }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const IndexPage: NextPage = () => {
     const [discourse, setDiscourse] = React.useState<string>(discourseList[Math.floor(Math.random() * discourseList.length)])
 
     const {reveal, enabled} = useDiscourseModal();
