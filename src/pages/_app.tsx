@@ -32,7 +32,7 @@ const plexSans = IBM_Plex_Sans_Thai({
 
 const WokismApp = ({ Component, pageProps }: AppProps) => {
     return (
-        <main className={`${inter.className} ${plexSans} font-sans`}>
+        <main className={`relative ${inter.className} ${plexSans} font-sans`}>
             <Toaster position={'top-right'} />
             <DiscourseProvider>
                 <Component {...pageProps} />

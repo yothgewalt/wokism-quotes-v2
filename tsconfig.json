@@ -35,6 +35,9 @@
             "@contexts/core/*": [
                 "./src/contexts/*"
             ],
+            "@hooks/core": [
+                "./src/hooks/index.ts"
+            ],
         }
     },
     "include": [

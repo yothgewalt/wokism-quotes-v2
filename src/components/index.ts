@@ -10,3 +10,5 @@ export { default as ButtonChildrenMotionComponent } from './ButtonChildrenMotion
 export { default as DividerComponent } from './DividerComponent';
 
 export { default as SocialShareButtonGroupComponent } from './SocialShareButtonGroupComponent';
+
+export { default as DiscourseModalComponent } from './DiscourseModalComponent';
